@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Users;
+use App\Rules\ruby;
 
 class ConfirmController extends Controller
 {
@@ -19,15 +20,15 @@ class ConfirmController extends Controller
 
         
 
-        /*$this->validate($request, [
-            'name' => 'required|max:30',
-            'ruby' => 'required|max:30',
+        $this->validate($request, [
+            'name' => 'required|string|max:30',
+            'ruby' => ['required','max:30', new ruby],
             'dt' => 'required',
             'gender' => 'required',
             'email' => 'required',
             'phone' => 'required',
             'inquiry' => 'required'
-        ]);*/
+        ]);
 
         
 
