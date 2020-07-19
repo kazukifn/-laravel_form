@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>お問い合わせ</title>
-</head>
-<body>
+@extends('layout')
+
+@section('content')
 
 <h2>お問い合わせ</h2>
 <form method="POST" action="/confirm">
@@ -59,8 +55,7 @@
 
 
 </body>
-<script type="text/javascript" src="/check_list.js">
-</script>
+
 <style>
   .error input , 
   .error textarea {
@@ -75,7 +70,7 @@
 </style>
 
 {{--入力チェック--}}
-@include('js._script')
+{{--@include('js._script')--}}
 
 
-</html>
+@endsection

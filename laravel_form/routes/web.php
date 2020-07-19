@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'ConfirmController@index');
 
-
-
 Route::post('/confirm','ConfirmController@confirm');
 
 Route::post('/update','ConfirmController@update');
 
 Route::get('/complete','ConfirmController@complete');
+
+
 

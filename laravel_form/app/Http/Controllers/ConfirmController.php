@@ -12,31 +12,22 @@ class ConfirmController extends Controller
         return view('form.index');
     }
     public function confirm(Request $request) {
-
-        
-        
         
         $users = new Users($request->all());
 
-        
-
-        $this->validate($request, [
+        $validatedData = $request -> validate( [
             'name' => 'required|string|max:30',
             'ruby' => ['required','max:30', new ruby],
-            'dt' => 'required',
+            'dt' => 'required|date',
             'gender' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'inquiry' => 'required'
+            'email' => 'required|email',
+            'phone' => 'required|numeric|digits_between:8,11',
+            'inquiry' => 'required|max:100'
         ]);
-
-        
 
         $request->session()->put('users', $users);
 
         return view('form.confirm', compact('users'));
-
-       
     }
 
     public function update(Request $request) {
@@ -52,9 +43,6 @@ class ConfirmController extends Controller
         return view('form.send');
     }
 
-
-
-    
 }
 
 

@@ -1,15 +1,7 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>お問い合わせ</title>
-</head>
-<body>
+@extends('layout')
 
+@section('content')
 <h1>確認画面</h1>
-
-
-
-
 <form action="{{action('ConfirmController@update')}}" method="post">
   @csrf
   <table>
@@ -26,4 +18,4 @@
   <input type="submit" value="送信"> 
   
   </form>
-
+@endsection
